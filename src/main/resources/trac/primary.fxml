@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--lab 04-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="845.0" prefWidth="490.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trac.PrimaryController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <children>
+      <Label alignment="CENTER" text="Shortest Drone Path">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Pane prefHeight="767.0" prefWidth="512.0">
+         <children>
+            <ComboBox fx:id="destinationCityComboBox" layoutX="296.0" layoutY="124.0" onAction="#handleDestinationCitySelection" prefHeight="15.0" prefWidth="150.0" promptText="Select City">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></ComboBox>
+            <TextField fx:id="fileName" layoutX="7.0" layoutY="24.0" prefHeight="15.0" promptText="Enter file name">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></TextField>
+            <Button fx:id="readButton" layoutX="298.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleReadButton" prefHeight="15.0" prefWidth="150.0" text="Read">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></Button>
+            <Label layoutX="54.0" layoutY="56.0" prefHeight="15.0" text="Input File" />
+            <Label fx:id="totalCities" layoutX="8.0" layoutY="159.0" prefHeight="17.0" prefWidth="150.0">
+               <padding>
+                  <Insets top="2.0" />
+               </padding></Label>
+            <ComboBox fx:id="startCityComboBox" layoutX="8.0" layoutY="124.0" onAction="#handleStartCitySelection" prefHeight="15.0" prefWidth="150.0" promptText="Select State">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></ComboBox>
+            <Label fx:id="startCity" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="168.0" prefHeight="17.0" prefWidth="150.0" text="Start City">
+               <padding>
+                  <Insets right="2.0" top="2.0" />
+               </padding></Label>
+            <Label fx:id="targetCity" alignment="CENTER" layoutX="301.0" layoutY="168.0" prefHeight="17.0" prefWidth="140.0" text="Destination City" textAlignment="CENTER" wrapText="true">
+               <padding>
+                  <Insets top="2.0" />
+               </padding></Label>
+            <Label fx:id="totalCitiesRead" layoutX="296.0" layoutY="56.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="150.0" />
+            <Label fx:id="statusLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="91.0" prefHeight="15.0" prefWidth="150.0" />
+            <Label layoutX="296.0" layoutY="91.0" text="Max Range" />
+            <Label fx:id="directDistance" layoutX="10.0" layoutY="219.0" prefHeight="17.0" prefWidth="150.0" />
+            <Label fx:id="totalPathDistance" layoutX="286.0" layoutY="215.0" prefHeight="17.0" prefWidth="150.0" />
+            <ScrollPane fx:id="resultPane" hbarPolicy="ALWAYS" layoutX="14.0" layoutY="263.0" prefHeight="391.0" prefWidth="426.0" vbarPolicy="ALWAYS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="478.0" prefWidth="409.0">
+                     <children>
+                        <VBox fx:id="pathVBox" prefHeight="176.0" prefWidth="206.0" spacing="10.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <TextField fx:id="maxRangeField" layoutX="367.0" layoutY="87.0" prefHeight="25.0" prefWidth="77.0" text="235" />
+         </children>
+      </Pane>
+   </children>
+</VBox>

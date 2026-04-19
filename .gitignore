@@ -1,0 +1,17 @@
+# Maven build output
+target/
+
+# NetBeans specific
+nbactions.xml
+nb-configuration.xml
+.nb-gradle/
+
+# Mac junk
+.DS_Store
+
+# Compiled Java classes
+*.class
+
+# IDE files
+*.iml
+.idea/
